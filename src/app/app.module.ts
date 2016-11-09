@@ -7,11 +7,15 @@ import {RouterModule} from "@angular/router";
 import {routes} from "./app.routes";
 import { AppComponent } from './app.component';
 import { CatalogComponent } from './catalog/catalog.component';
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
+import { AccountComponent } from './account/account.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CatalogComponent
+    CatalogComponent,
+    ShoppingCartComponent,
+    AccountComponent
   ],
   imports: [
     BrowserModule,

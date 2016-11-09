@@ -1,1 +1,17 @@
-<router-outlet></router-outlet>
+<div class="container">
+
+  <nav class="navbar navbar-light bg-faded">
+    <a class="navbar-brand" href="#">
+      <img src="/assets/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+      ng-Bookstore
+    </a>
+    <div class="nav navbar-nav">
+      <a [routerLink]="['catalog']" class="nav-item nav-link active" href="#">Catalog <span class="sr-only">(current)</span></a>
+      <a [routerLink]="['cart']" class="nav-item nav-link" href="#">Shopping Cart</a>
+      <a [routerLink]="['account']" class="nav-item nav-link" href="#">Account</a>
+    </div>
+  </nav>
+
+  <router-outlet></router-outlet>
+
+</div>
