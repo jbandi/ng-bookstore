@@ -1,24 +1,23 @@
 import {Component, OnInit} from '@angular/core';
+import {CatalogService} from "./catalog.service";
 
 @Component({
   selector: 'bs-catalog',
-  templateUrl: './catalog.component.html'
+  templateUrl: './catalog.component.html',
+  providers: [CatalogService]
 })
 export class CatalogComponent implements OnInit {
 
-  private results = [
-    {
-      title: 'Java for Dummies', price: 42
-    },
-    {
-      title: 'Professional Java', price: 41
-    }
-  ];
+  private results;
 
-  constructor() {
+  constructor(private catalogService: CatalogService) {
   }
 
   ngOnInit() {
+  }
+
+  search(term: string) {
+    this.results = this.catalogService.search(term)
   }
 
 }

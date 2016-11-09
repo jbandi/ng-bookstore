@@ -1,0 +1,12 @@
+{
+  "catalog": [
+    {
+      "title": "Java for Dummies",
+      "price": "42"
+    },
+    {
+      "title": "Professional Java",
+      "price": "41"
+    }
+  ]
+}
