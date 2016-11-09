@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'bs-catalog',
@@ -6,7 +6,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CatalogComponent implements OnInit {
 
-  constructor() { }
+  private results = [
+    {
+      title: 'Java for Dummies', price: 42
+    },
+    {
+      title: 'Professional Java', price: 41
+    }
+  ];
+
+  constructor() {
+  }
 
   ngOnInit() {
   }

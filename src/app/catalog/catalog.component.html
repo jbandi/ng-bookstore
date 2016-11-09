@@ -1,3 +1,27 @@
-<p>
-  catalog works!
-</p>
+<h2>Catalog Search</h2>
+<p></p>
+<form>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Keywords</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+           placeholder="Enter search term">
+  </div>
+  <button class="btn btn-primary">Search</button>
+</form>
+
+<div class="bs-search-result">
+  <h4>Result:</h4>
+
+  <div class="list-group">
+    <li *ngFor="let result of results" class="list-group-item bs-search-result-item">
+      {{result.title}}
+      <div class="float-sm-right">
+        <span>{{result.price | currency}}</span>
+        <button class="btn">
+          Add to Cart
+        </button>
+
+      </div>
+    </li>
+  </div>
+</div>

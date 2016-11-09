@@ -6,12 +6,15 @@
       ng-Bookstore
     </a>
     <div class="nav navbar-nav">
-      <a [routerLink]="['catalog']" class="nav-item nav-link active" href="#">Catalog <span class="sr-only">(current)</span></a>
+      <a [routerLink]="['catalog']" class="nav-item nav-link active" href="#">Catalog <span
+        class="sr-only">(current)</span></a>
       <a [routerLink]="['cart']" class="nav-item nav-link" href="#">Shopping Cart</a>
       <a [routerLink]="['account']" class="nav-item nav-link" href="#">Account</a>
     </div>
   </nav>
 
-  <router-outlet></router-outlet>
+  <p class="bs-content">
+    <router-outlet></router-outlet>
+  </p>
 
 </div>
