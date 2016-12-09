@@ -1,6 +1,4 @@
-import {Component} from '@angular/core';
-import {RouterModule, Routes} from '@angular/router';
-import {LocationStrategy, HashLocationStrategy} from '@angular/common';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -10,6 +8,3 @@ import {LocationStrategy, HashLocationStrategy} from '@angular/common';
 export class AppComponent {
   title = 'app works!';
 }
-
-
-

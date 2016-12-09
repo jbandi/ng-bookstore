@@ -1,12 +1,12 @@
 import {Routes} from "@angular/router";
 
 import {CatalogComponent} from "./catalog/catalog.component";
-import {ShoppingCartComponent} from "./shopping-cart/shopping-cart.component";
-import {AccountComponent} from "./account/account.component";
 
 export const routes: Routes = [
   {path: '', redirectTo: 'catalog', pathMatch: 'full'},
   {path: 'catalog', component: CatalogComponent},
-  {path: 'cart', component: ShoppingCartComponent},
-  {path: 'account', component: AccountComponent}
+  {path: 'cart', loadChildren:  () => System.import('./shopping-cart/shopping-cart.module').then(m => m.ShoppingCartModule)},
+  {path: 'account', loadChildren:  () => System.import('./account/account.module').then(m => m.AccountModule)}
 ];
+
+

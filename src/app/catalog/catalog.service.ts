@@ -3,6 +3,7 @@ import {Http, URLSearchParams} from "@angular/http";
 
 import 'rxjs/Rx';
 import 'rxjs/add/operator/map';
+import {Observable} from "rxjs";
 
 const API_URL_SEARCH = 'http://localhost:3000/catalog';
 

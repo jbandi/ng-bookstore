@@ -13,9 +13,7 @@ import { AccountComponent } from './account/account.component';
 @NgModule({
   declarations: [
     AppComponent,
-    CatalogComponent,
-    ShoppingCartComponent,
-    AccountComponent
+    CatalogComponent
   ],
   imports: [
     BrowserModule,

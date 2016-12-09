@@ -17,7 +17,7 @@ export class CatalogComponent implements OnInit {
   }
 
   search(term: string) {
-    this.results = this.catalogService.search(term)
+    this.results = this.catalogService.search(term);
   }
 
 }
