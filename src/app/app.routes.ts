@@ -1,7 +1,7 @@
 import {Routes} from "@angular/router";
 
-import {CatalogComponent} from "./catalog/catalog.component";
-import {ShoppingCartComponent} from "./shopping-cart/shopping-cart.component";
+import {CatalogComponent} from "./catalog/list/catalog.component";
+import {ShoppingCartComponent} from "./catalog/cart/shopping-cart.component";
 
 
 export const routes: Routes = [
