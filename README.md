@@ -5,6 +5,10 @@
 
 
 
+# TODO
+- Basic Authentication / Route Guards
+- i18n
+
 
 # NgBookstore
 
