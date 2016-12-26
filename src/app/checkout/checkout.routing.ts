@@ -1,11 +1,11 @@
 import {ModuleWithProviders} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
-import {ShoppingCartComponent} from "./shopping-cart.component";
+import {CheckoutComponent} from "./checkout.component";
 
 export const shoppingcartRoutes: Routes = [
     {
         path: '',
-        component: ShoppingCartComponent
+        component: CheckoutComponent
     },
 ];
 

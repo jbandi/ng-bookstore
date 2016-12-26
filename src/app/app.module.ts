@@ -9,11 +9,13 @@ import { AppComponent } from './app.component';
 import { CatalogComponent } from './catalog/catalog.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { AccountComponent } from './account/account.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CatalogComponent
+    CatalogComponent,
+    ShoppingCartComponent,
   ],
   imports: [
     BrowserModule,
