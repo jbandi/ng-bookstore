@@ -1,12 +1,17 @@
 import {ModuleWithProviders} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
-import {CheckoutComponent} from "./checkout.component";
+import {CheckoutPositionsComponent} from "./checkout-positions.component";
+import {CheckoutConfirmComponent} from "./checkout-confirm.component";
 
-export const shoppingcartRoutes: Routes = [
+export const checkoutRoutes: Routes = [
     {
         path: '',
-        component: CheckoutComponent
+        children: [
+          {path: 'positions', component: CheckoutPositionsComponent},
+          {path: 'confirm', component: CheckoutConfirmComponent},
+          {path: '', redirectTo: 'positions', pathMatch: 'full'}
+        ]
     },
 ];
 
-export const routing: ModuleWithProviders = RouterModule.forChild(shoppingcartRoutes);
+export const routing: ModuleWithProviders = RouterModule.forChild(checkoutRoutes);
