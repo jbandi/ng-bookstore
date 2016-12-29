@@ -7,10 +7,14 @@ import {RouterModule} from "@angular/router";
 import {routes} from "./app.routes";
 import {CatalogModule} from "./catalog/catalog.module";
 import {AppComponent} from './app.component';
+import {LoggedInGuard} from "./logged-in-guard.service";
+import {AuthService} from "./auth.service";
+import {LoginComponent} from "./login.component";
+import {BookstoreHttpClientService} from "./bookstore-http-client.service";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent, LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -19,7 +23,7 @@ import {AppComponent} from './app.component';
     RouterModule.forRoot(routes),
     CatalogModule
   ],
-  providers: [],
+  providers: [AuthService, LoggedInGuard, BookstoreHttpClientService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

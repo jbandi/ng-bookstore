@@ -18,8 +18,8 @@
       "prefix": "bs",
       "mobile": false,
       "styles": [
-        "styles.css",
-        "../node_modules/bootstrap/scss/bootstrap-flex.scss"
+        "../node_modules/bootstrap/scss/bootstrap-flex.scss",
+        "styles.css"
       ],
       "scripts": [],
       "environments": {

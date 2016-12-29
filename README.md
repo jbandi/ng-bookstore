@@ -2,11 +2,13 @@
 
 - Using Bootstrap 4
 - Code-Splitting & lazy-loading of modules
-
+- Protected Routes
+- Basic Authentication on API calls
 
 
 # TODO
-- Basic Authentication / Route Guards
+- Order submission
+- Reactive Forms (account)
 - i18n
 
 
