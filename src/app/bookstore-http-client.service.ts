@@ -13,18 +13,30 @@ export class BookstoreHttpClientService {
 
   constructor(private http: Http){}
 
-  createAuthorizationHeader(headers: Headers) {
-    headers.append('Authorization', 'Basic ' +
-      btoa('username:password'));
-  }
-
-  get(url, options: RequestOptionsArgs = {}) {
+  addAuthorizationHeader(options: RequestOptionsArgs) {
 
     if (!options.headers) options.headers = new Headers();
 
-    this.createAuthorizationHeader(options.headers);
+    options.headers.append('Authorization', 'Basic ' +
+      btoa('username:password'));
+  }
+
+  get(url: string, options: RequestOptionsArgs = {}) {
+
+    this.addAuthorizationHeader(options);
 
     return this.http.get(BASE_URL + url, options);
+  }
+
+  post(url:string, payload: any, options: RequestOptionsArgs = {}){
+
+    this.addAuthorizationHeader(options);
+
+    options.headers.append('Content-Type', 'application/json');
+
+    const body = JSON.stringify(payload);
+
+    return this.http.post(BASE_URL + url, payload, options)
   }
 
 }

@@ -1,19 +1,18 @@
 <h3>Positions:</h3>
 
 <div class="list-group">
-  <div *ngFor="let position of positions" class="list-group-item bs-search-result-item">
+  <div *ngFor="let purchaseOrderItem of purchaseOrderItems" class="list-group-item bs-search-result-item">
     <div class="row">
       <div class="col-xs-8">
-        <p>{{position.title}}</p>
+        <p>{{purchaseOrderItem.bookInfo.title}}</p>
       </div>
       <div class="col-xs-4">
         <div class="float-sm-right">
-          <span>{{position.price | currency}}</span>
+          <span>{{purchaseOrderItem.bookInfo.price | currency}}</span>
         </div>
       </div>
     </div>
   </div>
 </div>
-
 
 <a [routerLink]="['/checkout']" class="btn btn-primary">Checkout!</a>

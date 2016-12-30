@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {CartService} from "../catalog/cart.service";
+import {PurchaseOrder} from "../model/order";
+import {Router, ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'bs-checkout-confirm',
@@ -6,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CheckoutConfirmComponent implements OnInit {
 
-  constructor() { }
+  private purchaseOrder: PurchaseOrder;
+
+  constructor(private cartService: CartService, private router: Router, private route: ActivatedRoute,) { }
 
   ngOnInit() {
+    this.purchaseOrder = this.cartService.getPurchaseOrder();
   }
 
+  sendOrder(){
+    this.cartService.sendOrder()
+      .subscribe(
+        () => {
+          this.router.navigate(['../finish'], {relativeTo: this.route});
+        }
+        // TODO: Error handling ...
+      );
+  }
 }

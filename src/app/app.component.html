@@ -11,7 +11,7 @@
       <a [routerLink]="['account']" [routerLinkActive]="['active']" class="nav-item nav-link" href="#">Account</a>
     </div>
     <div class="float-lg-right">
-      <i><a *ngIf="authService.isLoggedIn()" class="nav-item">Logged in as: {{authService.getLogin()?.user}}</a></i>
+      <i><a *ngIf="authService.isLoggedIn()" class="nav-item">Logged in as: {{authService.getLogin()?.email}}</a></i>
       <button class="btn btn-outline-primary" *ngIf="authService.isLoggedIn()" (click)="authService.logout()">Logout</button>
       <button class="btn btn-outline-primary" *ngIf="!authService.isLoggedIn()" (click)="goToLogin()">Login</button>
     </div>

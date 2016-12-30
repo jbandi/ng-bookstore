@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {CartService} from "../catalog/cart.service";
+import {PurchaseOrder} from "../model/order";
 
 @Component({
   selector: 'bs-checkout-positions',
@@ -6,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CheckoutPositionsComponent implements OnInit {
 
-  constructor() { }
+  private purchaseOrder: PurchaseOrder;
+
+  constructor(private cartService: CartService) { }
 
   ngOnInit() {
+    this.purchaseOrder = this.cartService.getPurchaseOrder();
   }
 
 }

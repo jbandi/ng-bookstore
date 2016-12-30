@@ -19,7 +19,7 @@
 </form>
 
 <div class="well" *ngIf="authService.isLoggedIn()">
-  Logged in as <b>{{ authService.getUser() }}</b>
+  Logged in as <b>{{ authService.getLogin().email }}</b>
   <a href (click)="logout()">Log out</a>
 </div>
 <hr>

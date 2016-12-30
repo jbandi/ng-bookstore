@@ -1,3 +1,7 @@
 <p>
-  checkout confirm!
+  Edit your order
 </p>
+
+{{purchaseOrder | json }}
+
+<a [routerLink]="['../confirm']" class="btn btn-primary">Confirm</a>

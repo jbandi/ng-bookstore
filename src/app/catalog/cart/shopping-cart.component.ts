@@ -6,10 +6,10 @@ import {CartService} from "../cart.service";
   templateUrl: './shopping-cart.component.html'
 })
 export class ShoppingCartComponent implements OnInit {
-  private positions;
+  private purchaseOrderItems;
 
   constructor(private cartService: CartService) {
-    this.positions = this.cartService.getPositions();
+    this.purchaseOrderItems = this.cartService.getPurchaseOrderItems();
   }
 
   ngOnInit() {

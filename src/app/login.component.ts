@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {CatalogService} from "./catalog/catalog.service";
 import {CartService} from "./catalog/cart.service";
 import {Router} from "@angular/router";
@@ -21,17 +21,23 @@ export class LoginComponent {
 
   login(username: string, password: string) {
     this.message = 'Trying to log in ...';
-    this.authService.login(username, password).subscribe(() => {
-      this.setMessage();
-      if (this.authService.getLogin()) {
-        // Get the redirect URL from our auth service
-        // If no redirect has been set, use the default
-        let redirect = this.authService.redirectUrl ? this.authService.redirectUrl : '/';
-        // Redirect the user
-        this.router.navigate([redirect]);
-        this.authService.redirectUrl = '';
-      }
-    });
+    this.authService.login(username, password).subscribe(success => {
+        if (success) {
+          this.setMessage();
+          if (this.authService.getLogin()) {
+            let redirect = this.authService.redirectUrl ? this.authService.redirectUrl : '/';
+            this.router.navigate([redirect]);
+            this.authService.redirectUrl = '';
+          }
+        }
+        else {
+          this.message = "Login failed!";
+        }
+
+      },
+      error => {
+        this.message = "Login failed!";
+      });
   }
 
   logout() {
