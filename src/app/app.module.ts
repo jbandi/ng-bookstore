@@ -12,6 +12,7 @@ import {AuthService} from "./core/service/auth.service";
 import {LoginComponent} from "./core/components/login.component";
 import {BookstoreHttpClientService} from "./core/service/bookstore-http-client.service";
 import {BookstoreCoreModule} from "./core/bookstore-core.module";
+import {catalogRouting} from "./catalog/catalog.routing";
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import {BookstoreCoreModule} from "./core/bookstore-core.module";
     HttpModule,
     RouterModule.forRoot(routes),
     BookstoreCoreModule,
-    CatalogModule
+    CatalogModule,
+    catalogRouting
   ],
   bootstrap: [AppComponent]
 })

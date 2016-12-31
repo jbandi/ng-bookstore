@@ -8,9 +8,6 @@ import {LoginComponent} from "./core/components/login.component";
 
 export const routes: Routes = [
   {path: '', redirectTo: 'catalog', pathMatch: 'full'},
-  {path: 'catalog', component: CatalogComponent},
-  {path: 'cart', component:  ShoppingCartComponent},
-  {path: 'login', component:  LoginComponent },
   {path: 'account', loadChildren:  './account/account.module#AccountModule', canActivate: [LoggedInGuard]},
   {path: 'checkout', loadChildren:  './checkout/checkout.module#CheckoutModule', canActivate: [LoggedInGuard]}
 ];

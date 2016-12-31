@@ -5,7 +5,7 @@ import {CheckoutConfirmComponent} from "./components/checkout-confirm.component"
 import {CheckoutFinishComponent} from "./components/checkout-finish.component";
 import {CustomerResolve} from "./service/customer-resolve";
 
-export const checkoutRoutes: Routes = [
+const checkoutRoutes: Routes = [
     {
         path: '',
         children: [
