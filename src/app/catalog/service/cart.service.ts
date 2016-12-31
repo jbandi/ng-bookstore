@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import {Book} from "../core/model/book";
-import {PurchaseOrderItem, PurchaseOrder, BookInfo} from "../core/model/order";
-import {BookstoreHttpClientService} from "../core/service/bookstore-http-client.service";
+import {Book} from "../../core/model/book";
+import {PurchaseOrderItem, PurchaseOrder, BookInfo} from "../../core/model/order";
+import {BookstoreHttpClientService} from "../../core/service/bookstore-http-client.service";
 
 @Injectable()
 export class CartService {

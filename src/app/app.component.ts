@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import {CatalogService} from "./catalog/catalog.service";
-import {CartService} from "./catalog/cart.service";
+import {CatalogService} from "./catalog/service/catalog.service";
+import {CartService} from "./catalog/service/cart.service";
 import {AuthService} from "./core/service/auth.service";
 import {Router} from "@angular/router";
 

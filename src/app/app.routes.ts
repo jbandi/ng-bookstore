@@ -1,7 +1,7 @@
 import {Routes} from "@angular/router";
 
-import {CatalogComponent} from "./catalog/list/catalog.component";
-import {ShoppingCartComponent} from "./catalog/cart/shopping-cart.component";
+import {CatalogComponent} from "./catalog/components/catalog.component";
+import {ShoppingCartComponent} from "./catalog/components/shopping-cart.component";
 import {LoggedInGuard} from "./core/service/logged-in-guard.service";
 import {LoginComponent} from "./core/components/login.component";
 

@@ -1,7 +1,7 @@
 import {CommonModule} from "@angular/common";
 import {NgModule} from '@angular/core'
 import {routing} from "./account.routing";
-import {AccountComponent} from './account.component';
+import {AccountComponent} from './components/account.component';
 
 @NgModule({
   imports     : [CommonModule, routing],

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {CartService} from "../catalog/cart.service";
-import {PurchaseOrder} from "../core/model/order";
+import {CartService} from "../../catalog/service/cart.service";
+import {PurchaseOrder} from "../../core/model/order";
 import {ActivatedRoute} from "@angular/router";
-import {ICustomer} from "./model/customer";
+import {ICustomer} from "../model/customer";
 
 @Component({
   selector: 'bs-checkout-positions',

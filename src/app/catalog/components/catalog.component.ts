@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {CatalogService} from "../catalog.service";
+import {CatalogService} from "../service/catalog.service";
 import {Book} from "../../core/model/book";
-import {CartService} from "../cart.service";
+import {CartService} from "../service/cart.service";
 
 @Component({
   selector: 'bs-catalog',

@@ -1,6 +1,6 @@
 import {ModuleWithProviders} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
-import {AccountComponent} from "./account.component";
+import {AccountComponent} from "./components/account.component";
 
 export const shoppingcartRoutes: Routes = [
     {
