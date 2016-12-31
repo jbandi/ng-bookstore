@@ -4,11 +4,14 @@ import {BookstoreHttpClientService} from "./service/bookstore-http-client.servic
 import {LoggedInGuard} from "./service/logged-in-guard.service";
 import {AuthService} from "./service/auth.service";
 import {LoginComponent} from "./components/login.component";
+import {FormsModule} from "@angular/forms";
+import {HttpModule} from "@angular/http";
 
 @NgModule({
-  imports     : [CommonModule],
+  imports: [CommonModule, FormsModule, HttpModule],
   declarations: [LoginComponent],
   exports: [LoginComponent],
   providers: [AuthService, LoggedInGuard, BookstoreHttpClientService],
 })
-export class BookstoreCoreModule {}
+export class BookstoreCoreModule {
+}

@@ -2,14 +2,15 @@
 
 - Using Bootstrap 4
 - Code-Splitting & lazy-loading of modules
-- Protected Routes
-- Basic Authentication on API calls
+- Protected Routes using Guards (http://blog.thoughtram.io/angular/2016/07/18/guards-in-angular-2.html)
+- Route Resolve (http://blog.thoughtram.io/angular/2016/10/10/resolving-route-data-in-angular-2.html)
+- Basic Authentication on API calls (http://stackoverflow.com/questions/34464108/angular2-set-headers-for-every-request, http://stackoverflow.com/questions/35498456/what-is-httpinterceptor-equivalent-in-angular2)
 
 
 # TODO
-- Order submission
-- Reactive Forms (account)
+- Reactive Forms (account) (https://toddmotto.com/angular-2-forms-reactive, http://blog.thoughtram.io/angular/2016/06/22/model-driven-forms-in-angular-2.html)
 - i18n
+- Maven integration
 
 
 # NgBookstore
