@@ -39,7 +39,7 @@ export class AuthService {
     this.router.navigateByUrl('/');
   }
 
-  getLogin(): any {
+  getLogin(): any { // TODO: login model
     return JSON.parse(sessionStorage.getItem(LOGIN_KEY));
   }
 

@@ -13,14 +13,6 @@ export class BookstoreHttpClientService {
 
   constructor(private http: Http){}
 
-  addAuthorizationHeader(options: RequestOptionsArgs) {
-
-    if (!options.headers) options.headers = new Headers();
-
-    options.headers.append('Authorization', 'Basic ' +
-      btoa('username:password'));
-  }
-
   get(url: string, options: RequestOptionsArgs = {}) {
 
     this.addAuthorizationHeader(options);
@@ -37,6 +29,15 @@ export class BookstoreHttpClientService {
     const body = JSON.stringify(payload);
 
     return this.http.post(BASE_URL + url, payload, options)
+  }
+
+  addAuthorizationHeader(options: RequestOptionsArgs) {
+
+    if (!options.headers) options.headers = new Headers();
+
+    // TODO: use real creadentials
+    options.headers.append('Authorization', 'Basic ' +
+      btoa('username:password'));
   }
 
 }

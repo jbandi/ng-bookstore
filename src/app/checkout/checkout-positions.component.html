@@ -1,7 +1,13 @@
-<p>
+<h2>
   Edit your order
-</p>
+</h2>
 
+
+<h4>Customer:</h4>
+{{customer | json}}
+
+<h4>Order:</h4>
 {{purchaseOrder | json }}
 
+<hr>
 <a [routerLink]="['../confirm']" class="btn btn-primary">Confirm</a>
