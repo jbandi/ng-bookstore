@@ -1,8 +1,8 @@
 import {ActivatedRouteSnapshot, Resolve} from "@angular/router";
 import {Injectable} from "@angular/core";
 import {ICustomer} from "./model/customer";
-import {BookstoreHttpClientService} from "../bookstore-http-client.service";
-import {AuthService} from "../auth.service";
+import {BookstoreHttpClientService} from "../core/service/bookstore-http-client.service";
+import {AuthService} from "../core/service/auth.service";
 import {URLSearchParams} from "@angular/http";
 @Injectable()
 export class CustomerService {

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {CartService} from "../catalog/cart.service";
-import {PurchaseOrder} from "../model/order";
+import {PurchaseOrder} from "../core/model/order";
 
 @Component({
   templateUrl: './checkout-finish.component.html',
