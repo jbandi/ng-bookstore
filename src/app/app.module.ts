@@ -14,7 +14,7 @@ import {catalogRouting} from "./catalog/catalog.routing";
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes),
+    RouterModule.forRoot(routes, {enableTracing: true}),
     BookstoreCoreModule,
     CatalogModule,
     catalogRouting
