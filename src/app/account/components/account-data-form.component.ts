@@ -117,7 +117,7 @@ export class AccountDataFormComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
     if (this.initialData){
-      this.customerForm.patchValue(this.initialData);
+      this.customerForm.patchValue({customer: this.initialData});
     }
   }
 

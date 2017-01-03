@@ -12,25 +12,26 @@ export class AccountComponent implements OnInit {
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
-    // this.customer = this.route.snapshot.data['customer'];
-    this.customer = {
-        email: 'test@test.com',
-        number: '1',
-        firstName: 'Test',
-        lastName: 'Test',
-        address: {
-          city: 'Test',
-          postalCode: '1234',
-          street: 'Test',
-          country: 'TEST'
-        },
-        creditCard: {
-          type: 'TEST',
-          number: '12345',
-          expirationMonth: 12,
-          expirationYear: 2018
-        }
-      }
+    this.customer = this.route.snapshot.data['customer'];
+
+    // this.customer = {
+    //     email: 'test@test.com',
+    //     number: '1',
+    //     firstName: 'Test',
+    //     lastName: 'Test',
+    //     address: {
+    //       city: 'Test',
+    //       postalCode: '1234',
+    //       street: 'Test',
+    //       country: 'TEST'
+    //     },
+    //     creditCard: {
+    //       type: 'TEST',
+    //       number: '12345',
+    //       expirationMonth: 12,
+    //       expirationYear: 2018
+    //     }
+    //   }
   }
 
 }

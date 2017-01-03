@@ -18,6 +18,7 @@ export class CheckoutPositionsComponent implements OnInit {
   ngOnInit() {
     this.customer = this.route.snapshot.data['customer'];
     this.purchaseOrder = this.cartService.getPurchaseOrder();
+
   }
 
 }
