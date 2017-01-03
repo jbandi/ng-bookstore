@@ -7,12 +7,14 @@ import {LoginComponent} from "./components/login.component";
 import {FormsModule} from "@angular/forms";
 import {HttpModule} from "@angular/http";
 import {RouterModule} from "@angular/router";
+import {CustomerResolve} from "./service/customer-resolve";
+import {CustomerService} from "./service/customer-service";
 
 @NgModule({
   imports: [CommonModule, RouterModule, FormsModule, HttpModule],
   declarations: [LoginComponent],
   exports: [LoginComponent],
-  providers: [AuthService, LoggedInGuard, BookstoreHttpClientService],
+  providers: [AuthService, LoggedInGuard, BookstoreHttpClientService, CustomerService, CustomerResolve],
 })
 export class BookstoreCoreModule {
 }

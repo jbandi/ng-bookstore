@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ICustomer} from "../../checkout/model/customer";
+import {ICustomer} from "../../core/model/customer";
 import {ActivatedRoute} from "@angular/router";
 
 @Component({

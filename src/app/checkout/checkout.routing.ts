@@ -3,7 +3,7 @@ import {Routes, RouterModule} from '@angular/router';
 import {CheckoutPositionsComponent} from "./components/checkout-positions.component";
 import {CheckoutConfirmComponent} from "./components/checkout-confirm.component";
 import {CheckoutFinishComponent} from "./components/checkout-finish.component";
-import {CustomerResolve} from "./service/customer-resolve";
+import {CustomerResolve} from "../core/service/customer-resolve";
 
 const checkoutRoutes: Routes = [
     {
