@@ -1,2 +1,6 @@
 <h2>Account</h2>
-<bs-account-data-form [initialData]="customer"></bs-account-data-form>
+<bs-account-data-form
+  [emailIsReadOnly]="true"
+  [initialData]="customer"
+  (onSaveRegistration)="saveRegistration($event)">
+</bs-account-data-form>

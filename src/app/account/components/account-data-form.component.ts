@@ -1,17 +1,17 @@
-import {Component, OnInit, Input, AfterViewInit} from '@angular/core';
+import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import {FormBuilder, Validators, FormGroup} from "@angular/forms";
-import {RegistrationService} from "../service/registration.service";
+import {IRegistration} from "../../core/model/customer";
 
 @Component({
   selector: 'bs-account-data-form',
   template: `
-<form novalidate  [formGroup]="customerForm" (ngSubmit)="onSubmit()">
+<form novalidate  [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
 
   <div formGroupName="customer">
   
     <div class="form-group">
       <label for="email">Email address</label>
-      <input type="email" class="form-control" id="email" formControlName="email">
+      <input type="email" class="form-control" id="email" formControlName="email" [readonly]="emailIsReadOnly">
     </div>
     <div class="form-group">
       <label for="firstName">First Name</label>
@@ -75,23 +75,25 @@ import {RegistrationService} from "../service/registration.service";
   
   </div>
   
-  <button type="submit" class="btn btn-default">Submit</button>
+  <button type="submit" class="btn btn-default">Save</button>
 
 </form>
 `
 })
-export class AccountDataFormComponent implements OnInit, AfterViewInit {
+export class RegistrationFormComponent implements OnInit {
 
 
-  private customerForm: FormGroup;
+  private registrationForm: FormGroup;
 
+  @Input() emailIsReadOnly;
   @Input() initialData: any;
+  @Output() onSaveRegistration = new EventEmitter<IRegistration>();
 
-  constructor(private fb: FormBuilder, private registrationService: RegistrationService) {
+  constructor(private fb: FormBuilder) {
   }
 
   ngOnInit(): void {
-    this.customerForm = this.fb.group({
+    this.registrationForm = this.fb.group({
       customer: this.fb.group({
         email: ['', [Validators.required, Validators.minLength(2)]],
         firstName: ['', [Validators.required, Validators.minLength(2)]],
@@ -112,19 +114,19 @@ export class AccountDataFormComponent implements OnInit, AfterViewInit {
       password: ['', [Validators.required, Validators.minLength(2)]],
     });
 
-
-  }
-
-  ngAfterViewInit(): void {
     if (this.initialData){
-      this.customerForm.patchValue({customer: this.initialData});
+      this.registrationForm.patchValue({customer: this.initialData});
     }
+
   }
 
   onSubmit() {
-    console.log(this.customerForm);
-    this.registrationService.sendOrder(this.customerForm.value)
-      .subscribe();
+
+    this.onSaveRegistration.emit(this.registrationForm.value);
+
+    // console.log(this.registrationForm);
+    // this.registrationService.sendOrder(this.registrationForm.value)
+    //   .subscribe();
   }
 
 }

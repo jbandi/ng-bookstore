@@ -1,11 +1,12 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, Validators, FormGroup} from "@angular/forms";
 import {RegistrationService} from "../service/registration.service";
+import {IRegistration} from "../../core/model/customer";
 
 @Component({
   template: `
 <h2>Registration</h2>
-<bs-account-data-form></bs-account-data-form>
+<bs-account-data-form (onSaveRegistration)="saveRegistration($event)"></bs-account-data-form>
 `
 })
 export class RegistrationComponent implements OnInit {
@@ -42,6 +43,11 @@ export class RegistrationComponent implements OnInit {
     // console.log(this.customerForm);
     // this.registrationService.sendOrder(this.customerForm.value)
     //   .subscribe();
+  }
+
+  saveRegistration(registration: IRegistration){
+    this.registrationService.sendRegistration(registration)
+      .subscribe();
   }
 
 }

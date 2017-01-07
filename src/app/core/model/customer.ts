@@ -20,3 +20,8 @@ export interface ICreditCard {
   expirationMonth: number,
   expirationYear: number
 }
+
+export interface IRegistration {
+  customer: ICustomer,
+  password: string
+}
