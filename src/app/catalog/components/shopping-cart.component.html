@@ -1,18 +1,34 @@
-<h3>Positions:</h3>
 
-<div class="list-group">
-  <div *ngFor="let purchaseOrderItem of purchaseOrderItems" class="list-group-item bs-search-result-item">
-    <div class="row">
-      <div class="col-xs-8">
-        <p>{{purchaseOrderItem.bookInfo.title}}</p>
-      </div>
-      <div class="col-xs-4">
-        <div class="float-sm-right">
-          <span>{{purchaseOrderItem.bookInfo.price | currency}}</span>
+
+<div *ngIf="purchaseOrderItems.length === 0">
+  Your cart is empty!
+</div>
+
+<div *ngIf="purchaseOrderItems.length > 0">
+  <h3>Positions:</h3>
+  <div class="list-group">
+    <div *ngFor="let purchaseOrderItem of purchaseOrderItems" class="list-group-item bs-search-result-item">
+      <div class="row">
+        <div class="col-xs-8">
+          <h5>{{purchaseOrderItem.bookInfo.title}}</h5>
+          ISBN: {{purchaseOrderItem.bookInfo.isbn}},
+          Price: {{purchaseOrderItem.bookInfo.price | currency}}
+        </div>
+        <div class="col-xs-2">
+          <div class="float-xs-right">
+            <button class="btn btn-sm" (click)="purchaseOrderItem.decreaseQuantity()">-</button>
+            <span>{{purchaseOrderItem.quantity}}</span>
+            <button class="btn btn-sm" (click)="purchaseOrderItem.increaseQuantity()">+</button>
+          </div>
+        </div>
+        <div class="col-xs-2">
+          <div class="float-xs-right">
+            <span>{{purchaseOrderItem.bookInfo.price * purchaseOrderItem.quantity | currency}}</span>
+          </div>
         </div>
       </div>
     </div>
   </div>
+  <br>
+  <a [routerLink]="['/checkout']" class="btn btn-primary">Checkout!</a>
 </div>
-
-<a [routerLink]="['/checkout']" class="btn btn-primary">Checkout!</a>

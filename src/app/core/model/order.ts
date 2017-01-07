@@ -8,6 +8,16 @@ export class PurchaseOrderItem {
   bookInfo: BookInfo;
   quantity: number = 1;
   price: number;
+
+  decreaseQuantity(){
+    if (this.quantity > 1) {
+      this.quantity--;
+    }
+  }
+
+  increaseQuantity(){
+    this.quantity++
+  }
 }
 
 export class BookInfo {
