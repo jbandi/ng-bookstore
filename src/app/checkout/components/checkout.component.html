@@ -1,13 +1,12 @@
 <div *ngIf="currentCheckoutState === checkoutState.CONFIRM_DETAILS">
   <bs-checkout-details [customer]="customer"></bs-checkout-details>
-  <button (click)="confirmDetails()" >Confirm</button>
+  <button (click)="confirmDetails()" class="btn btn-primary">Confirm</button>
 </div>
 
 <div *ngIf="currentCheckoutState === checkoutState.CONFIRM_ORDER">
   <bs-checkout-order [order]="purchaseOrder"></bs-checkout-order>
-  <button (click)="confirmOrder()">Confirm</button>
+  <button (click)="confirmOrder()" class="btn btn-primary">Send Order</button>
 </div>
-
 
 <div *ngIf="currentCheckoutState === checkoutState.FINISHED">
   <bs-checkout-confirm></bs-checkout-confirm>

@@ -4,6 +4,12 @@ import {PurchaseOrder} from "../../core/model/order";
 import {ActivatedRoute} from "@angular/router";
 import {ICustomer} from "../../core/model/customer";
 
+enum CheckoutState {
+  CONFIRM_DETAILS,
+  CONFIRM_ORDER,
+  FINISHED
+}
+
 @Component({
   templateUrl: './checkout.component.html',
 })
@@ -27,14 +33,12 @@ export class CheckoutComponent implements OnInit {
   }
 
   confirmOrder(){
-    this.cartService.sendOrder();
-    this.currentCheckoutState = CheckoutState.FINISHED;
+    this.cartService.sendOrder()
+      .subscribe(
+        () => this.currentCheckoutState = CheckoutState.FINISHED
+      );
   }
 
 }
 
-export enum CheckoutState {
-  CONFIRM_DETAILS,
-  CONFIRM_ORDER,
-  FINISHED
-}
+

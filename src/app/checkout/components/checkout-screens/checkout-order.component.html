@@ -1,2 +1,8 @@
 <h3>Confirm Order</h3>
-{{order | json}}
+
+<div class="list-group">
+  <div *ngFor="let item of order.items" class="list-group-item bs-search-result-item">
+    <bs-order-item [item]="item" [readonly]="true"></bs-order-item>
+  </div>
+</div>
+<br>

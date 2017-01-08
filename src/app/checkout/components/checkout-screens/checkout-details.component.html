@@ -1,2 +1,34 @@
 <h3>Confirm Delivery & Payment Details</h3>
-{{ customer | json }}
+
+<div class="card">
+  <div class="card-block">
+    <h6 class="card-title">Address:</h6>
+
+    <div>
+      {{customer.firstName}} {{customer.lastName}}
+      <br>
+      {{customer.address.street}}
+      <br>
+      {{customer.address.postalCode}} {{customer.address.city}}
+      <br>
+      {{customer.address.country}}
+    </div>
+  </div>
+
+  <div class="card-block">
+    <h6 class="card-title">Credit Card:</h6>
+
+    <div>
+      {{customer.creditCard.type}}
+      <br>
+      {{customer.creditCard.number}}
+      <br>
+      {{customer.creditCard.expirationMonth}}/{{customer.creditCard.expirationYear}}
+    </div>
+    <a [routerLink]="['/account']" class="btn btn-secondary float-xs-right">
+      Change
+    </a>
+  </div>
+
+
+</div>
