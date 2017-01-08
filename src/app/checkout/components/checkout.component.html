@@ -1,0 +1,15 @@
+<div *ngIf="currentCheckoutState === checkoutState.CONFIRM_DETAILS">
+  <bs-checkout-details [customer]="customer"></bs-checkout-details>
+  <button (click)="confirmDetails()" >Confirm</button>
+</div>
+
+<div *ngIf="currentCheckoutState === checkoutState.CONFIRM_ORDER">
+  <bs-checkout-order [order]="purchaseOrder"></bs-checkout-order>
+  <button (click)="confirmOrder()">Confirm</button>
+</div>
+
+
+<div *ngIf="currentCheckoutState === checkoutState.FINISHED">
+  <bs-checkout-confirm></bs-checkout-confirm>
+  <a [routerLink]="['/']" class="btn btn-primary">Continue shopping ...</a>
+</div>

@@ -9,13 +9,4 @@ import {Router} from "@angular/router";
   templateUrl: './app.component.html',
   providers: [CatalogService, CartService]
 })
-export class AppComponent {
-
-  constructor(private authService: AuthService, private router: Router) {}
-
-  goToLogin(){
-    this.authService.redirectUrl = '';
-    this.router.navigate(['login'])
-  }
-
-}
+export class AppComponent {}
