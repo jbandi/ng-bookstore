@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, Validators, FormGroup} from "@angular/forms";
 import {RegistrationService} from "../service/registration.service";
 import {IRegistration} from "../../core/model/customer";
+import {Router} from "@angular/router";
 
 @Component({
   template: `
@@ -9,35 +10,13 @@ import {IRegistration} from "../../core/model/customer";
 <bs-account-data-form (onSaveRegistration)="saveRegistration($event)"></bs-account-data-form>
 `
 })
-export class RegistrationComponent implements OnInit {
+export class RegistrationComponent {
 
   private customerForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private registrationService: RegistrationService) {
-  }
+  constructor(private registrationService: RegistrationService, public router: Router) {}
 
-  ngOnInit(): void {
-    // this.customerForm = this.fb.group({
-    //   customer: this.fb.group({
-    //     email: ['', [Validators.required, Validators.minLength(2)]],
-    //     firstName: ['', [Validators.required, Validators.minLength(2)]],
-    //     lastName: ['', [Validators.required, Validators.minLength(2)]],
-    //     address: this.fb.group({
-    //       street: [''],
-    //       city: [''],
-    //       postalCode: [''],
-    //       country: [''],
-    //     }),
-    //     creditCard: this.fb.group({
-    //       type: [''],
-    //       number: [''],
-    //       expirationMonth: [''],
-    //       expirationYear: [''],
-    //     }),
-    //   }),
-    //   password: ['', [Validators.required, Validators.minLength(2)]],
-    // });
-  }
+
 
   onSubmit() {
     // console.log(this.customerForm);
@@ -47,7 +26,9 @@ export class RegistrationComponent implements OnInit {
 
   saveRegistration(registration: IRegistration){
     this.registrationService.sendRegistration(registration)
-      .subscribe();
+      .subscribe(
+        () => this.router.navigate(['/login'])
+      );
   }
 
 }
