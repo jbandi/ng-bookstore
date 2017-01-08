@@ -26,9 +26,16 @@ export class BookstoreHttpClientService {
 
     options.headers.append('Content-Type', 'application/json');
 
-    const body = JSON.stringify(payload);
-
     return this.http.post(BASE_URL + url, payload, options)
+  }
+
+  put(url:string, payload: any, options: RequestOptionsArgs = {}){
+
+    this.addAuthorizationHeader(options);
+
+    options.headers.append('Content-Type', 'application/json');
+
+    return this.http.put(BASE_URL + url, payload, options)
   }
 
   addAuthorizationHeader(options: RequestOptionsArgs) {

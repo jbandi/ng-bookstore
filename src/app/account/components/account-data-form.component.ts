@@ -23,7 +23,7 @@ import {IRegistration} from "../../core/model/customer";
     </div>
   </div>
   
-  <div class="form-group">
+  <div *ngIf="!hidePassword" class="form-group">
     <label for="password">Password</label>
     <input type="password" class="form-control" id="password" formControlName="password">
   </div>
@@ -86,6 +86,7 @@ export class RegistrationFormComponent implements OnInit {
   private registrationForm: FormGroup;
 
   @Input() emailIsReadOnly;
+  @Input() hidePassword;
   @Input() initialData: any;
   @Output() onSaveRegistration = new EventEmitter<IRegistration>();
 

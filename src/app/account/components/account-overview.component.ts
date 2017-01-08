@@ -4,13 +4,13 @@ import {ActivatedRoute} from "@angular/router";
 import {RegistrationService} from "../service/registration.service";
 
 @Component({
-  templateUrl: './account.component.html'
+  templateUrl: './account-overview.component.html'
 })
-export class AccountComponent implements OnInit {
+export class AccountOverviewComponent implements OnInit {
 
   private customer: ICustomer;
 
-  constructor(private route: ActivatedRoute, private registrationService: RegistrationService) {}
+  constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {
     this.customer = this.route.snapshot.data['customer'];
@@ -35,12 +35,6 @@ export class AccountComponent implements OnInit {
     //   }
   }
 
-  saveRegistration(registration: IRegistration){
 
-    const updatedCustomer = Object.assign(this.customer, registration.customer);
-
-    this.registrationService.updateCustomer(updatedCustomer)
-      .subscribe();
-  }
 
 }

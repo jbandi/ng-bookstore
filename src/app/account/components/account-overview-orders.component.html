@@ -1,0 +1,29 @@
+<div class="card-block">
+  <h4 class="card-title">Orders</h4>
+
+  <div>
+    Orders for
+    <input type="text" #yearInput (blur)="yearChanged(yearInput.value)" [ngModel]="year">
+  </div>
+
+  <table class="table">
+    <thead>
+    <tr>
+      <th>Number</th>
+      <th>Date</th>
+      <th>Amount</th>
+      <th>Status</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let order of orders">
+      <th scope="row">{{order.number}}</th>
+      <td>{{order.date | date}}</td>
+      <td>{{order.amount}}</td>
+      <td>{{order.status}}</td>
+    </tr>
+     </tbody>
+  </table>
+
+
+</div>

@@ -1,6 +1,7 @@
-<h2>Account</h2>
+<h2>Account Details</h2>
 <bs-account-data-form
   [emailIsReadOnly]="true"
+  [hidePassword]="true"
   [initialData]="customer"
   (onSaveRegistration)="saveRegistration($event)">
 </bs-account-data-form>

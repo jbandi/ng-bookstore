@@ -1,0 +1,37 @@
+<div class="card-block">
+  <h4 class="card-title">Account Details</h4>
+  <div> Customer Number: {{customer.number}}</div>
+  <div> Email: {{customer.email}}</div>
+</div>
+
+<div class="card-block">
+  <h6 class="card-title">Address:</h6>
+
+  <div>
+    {{customer.firstName}} {{customer.lastName}}
+    <br>
+    {{customer.address.street}}
+    <br>
+    {{customer.address.postalCode}} {{customer.address.city}}
+    <br>
+    {{customer.address.country}}
+  </div>
+</div>
+
+<div class="card-block">
+  <h6 class="card-title">Credit Card:</h6>
+
+  <div>
+    {{customer.creditCard.type}}
+    <br>
+    {{customer.creditCard.number}}
+    <br>
+    {{customer.creditCard.expirationMonth}}/{{customer.creditCard.expirationYear}}
+  </div>
+</div>
+<div class="card-block">
+
+  <a [routerLink]="['/account/edit']" class="btn btn-secondary float-xs-right">
+    Edit
+  </a>
+</div>
