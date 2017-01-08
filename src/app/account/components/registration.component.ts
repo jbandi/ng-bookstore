@@ -5,24 +5,13 @@ import {IRegistration} from "../../core/model/customer";
 import {Router} from "@angular/router";
 
 @Component({
-  template: `
-<h2>Registration</h2>
-<bs-account-data-form (onSaveRegistration)="saveRegistration($event)"></bs-account-data-form>
-`
+  templateUrl: './registration.component.html'
 })
 export class RegistrationComponent {
 
   private customerForm: FormGroup;
 
   constructor(private registrationService: RegistrationService, public router: Router) {}
-
-
-
-  onSubmit() {
-    // console.log(this.customerForm);
-    // this.registrationService.sendOrder(this.customerForm.value)
-    //   .subscribe();
-  }
 
   saveRegistration(registration: IRegistration){
     this.registrationService.sendRegistration(registration)
