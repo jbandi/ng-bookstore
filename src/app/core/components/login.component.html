@@ -1,6 +1,4 @@
 <h2>LOGIN</h2>
-<p>{{message}}</p>
-<p>
 
 <form class="form-inline" *ngIf="!authService.isLoggedIn()">
   <div class="form-group">
@@ -17,6 +15,7 @@
     Submit
   </button>
 </form>
+<p>{{message}}</p>
 
 <div class="well" *ngIf="authService.isLoggedIn()">
   Logged in as <b>{{ authService.getLogin().email }}</b>

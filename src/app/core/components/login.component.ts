@@ -11,19 +11,13 @@ export class LoginComponent {
 
   message: string;
 
-  constructor(public authService: AuthService, public router: Router) {
-    this.setMessage();
-  }
-
-  setMessage() {
-    this.message = 'Logged ' + (this.authService.isLoggedIn() ? 'in' : 'out');
-  }
+  constructor(public authService: AuthService, public router: Router) {}
 
   login(username: string, password: string) {
     this.message = 'Trying to log in ...';
     this.authService.login(username, password).subscribe(success => {
         if (success) {
-          this.setMessage();
+          this.message = "Login successful";
           if (this.authService.getLogin()) {
             let redirect = this.authService.redirectUrl ? this.authService.redirectUrl : '/';
             this.router.navigate([redirect]);
@@ -42,7 +36,7 @@ export class LoginComponent {
 
   logout() {
     this.authService.logout();
-    this.setMessage();
+    this.message = 'Logged out!';
   }
 
 }
