@@ -1,16 +1,48 @@
 
 
-<div *ngIf="purchaseOrderItems.length === 0">
+<div *ngIf="!purchaseOrder || purchaseOrder?.items.length == 0">
   Your cart is empty!
 </div>
 
-<div *ngIf="purchaseOrderItems.length > 0">
+<div *ngIf="purchaseOrder?.items.length > 0">
   <h3>Positions:</h3>
-  <div class="list-group">
-    <div *ngFor="let item of purchaseOrderItems" class="list-group-item bs-search-result-item">
-      <bs-order-item [item]="item"></bs-order-item>
-    </div>
-  </div>
+
+
+  <table class="table">
+    <thead>
+    <tr>
+      <th>Item</th>
+      <th>Quantity</th>
+      <th>Price</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let item of purchaseOrder.items" >
+      <th>
+
+        <h5>{{item.bookInfo.title}}</h5>
+        ISBN: {{item.bookInfo.isbn}},
+        Price: {{item.bookInfo.price | currency}}
+
+      </th>
+      <td>
+
+        <button *ngIf="!readonly" (click)="item.decreaseQuantity()" class="btn btn-sm">-</button>
+        <span>{{item.quantity}}</span>
+        <button *ngIf="!readonly" (click)="item.increaseQuantity()" class="btn btn-sm">+</button>
+
+      </td>
+      <td>
+
+        <span>{{item.totalPrice | currency}}</span>
+
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <h4>Total: {{purchaseOrder.totalPrice | currency}}</h4>
+
   <br>
   <a [routerLink]="['/checkout']" class="btn btn-primary">Checkout!</a>
 </div>

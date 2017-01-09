@@ -1,13 +1,16 @@
 export class PurchaseOrder {
   customerNr: string = '1';
   items: PurchaseOrderItem[] = [];
+
+  get totalPrice(){
+    return this.items.reduce((sum, t) => sum + t.totalPrice, 0);
+  }
 }
 
 export class PurchaseOrderItem {
   id: string;
   bookInfo: BookInfo;
   quantity: number = 1;
-  price: number;
 
   decreaseQuantity(){
     if (this.quantity > 1) {
@@ -17,6 +20,10 @@ export class PurchaseOrderItem {
 
   increaseQuantity(){
     this.quantity++
+  }
+
+  get totalPrice(){
+    return this.quantity * this.bookInfo.price;
   }
 }
 

@@ -1,8 +1,37 @@
 <h3>Confirm Order</h3>
 
-<div class="list-group">
-  <div *ngFor="let item of order.items" class="list-group-item bs-search-result-item">
-    <bs-order-item [item]="item" [readonly]="true"></bs-order-item>
-  </div>
-</div>
+
+<table class="table">
+  <thead>
+  <tr>
+    <th>Item</th>
+    <th>Quantity</th>
+    <th>Price</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let item of order.items" >
+    <th>
+
+      <h5>{{item.bookInfo.title}}</h5>
+      ISBN: {{item.bookInfo.isbn}},
+      Price: {{item.bookInfo.price | currency}}
+
+    </th>
+    <td>
+
+      <span>{{item.quantity}}</span>
+
+    </td>
+    <td>
+
+      <span>{{item.bookInfo.price * item.quantity | currency}}</span>
+
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+<h4>Total: {{order.totalPrice | currency}}</h4>
+
 <br>

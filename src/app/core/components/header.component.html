@@ -1,25 +1,41 @@
-<nav class="navbar navbar-light bg-faded">
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+          data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+          aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
   <a [routerLink]="['']" class="navbar-brand" href="#">
     <img src="/assets/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
     ng-Bookstore
   </a>
-  <div class="nav navbar-nav">
-    <a [routerLink]="['catalog']" [routerLinkActive]="['active']" class="nav-item nav-link" href="#">
-      Catalog
-    </a>
-    <a [routerLink]="['cart']" [routerLinkActive]="['active']" class="nav-item nav-link" href="#">
-      Shopping Cart
-      <span *ngIf="getCartItemCount() > 0">
-        ({{getCartItemCount()}})
-      </span>
-    </a>
-    <a [routerLink]="['account']" [routerLinkActive]="['active']" class="nav-item nav-link" href="#">
-      Account
-    </a>
-  </div>
-  <div class="float-lg-right">
-    <i><a *ngIf="authService.isLoggedIn()" class="nav-item">Logged in as: {{authService.getLogin()?.email}}</a></i>
-    <button class="btn btn-outline-primary" *ngIf="authService.isLoggedIn()" (click)="authService.logout()">Logout</button>
-    <button class="btn btn-outline-primary" *ngIf="!authService.isLoggedIn()" (click)="goToLogin()">Login</button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a [routerLink]="['catalog']" [routerLinkActive]="['active']" class="nav-item nav-link" href="#">
+          Catalog
+        </a>
+      </li>
+      <li class="nav-item">
+        <a [routerLink]="['cart']" [routerLinkActive]="['active']" class="nav-item nav-link" href="#">
+          Shopping Cart
+          <span *ngIf="getCartItemCount() > 0">
+          ({{getCartItemCount()}})
+          </span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a [routerLink]="['account']" [routerLinkActive]="['active']" class="nav-item nav-link" href="#">
+          Account
+        </a>
+      </li>
+    </ul>
+
+    <div class="float-lg-right">
+      <i><a *ngIf="authService.isLoggedIn()" class="nav-item">Logged in as: {{authService.getLogin()?.email}}</a></i>
+      <button class="btn btn-outline-primary" *ngIf="authService.isLoggedIn()" (click)="authService.logout()">Logout
+      </button>
+      <button class="btn btn-outline-primary" *ngIf="!authService.isLoggedIn()" (click)="goToLogin()">Login</button>
+    </div>
+
   </div>
 </nav>

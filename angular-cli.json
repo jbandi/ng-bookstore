@@ -18,7 +18,7 @@
       "prefix": "bs",
       "mobile": false,
       "styles": [
-        "../node_modules/bootstrap/scss/bootstrap-flex.scss",
+        "../node_modules/bootstrap/scss/bootstrap.scss",
         "styles.css"
       ],
       "scripts": [],

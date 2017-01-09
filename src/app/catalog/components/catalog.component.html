@@ -12,21 +12,25 @@
 <div *ngIf="results" class="bs-search-result">
   <h4>Result:</h4>
 
-  <div class="list-group">
-    <div *ngFor="let result of results | async" class="list-group-item bs-search-result-item">
-      <div class="row">
-        <div class="col-xs-8">
-          <p>{{result.title}}</p>
-        </div>
-        <div class="col-xs-4">
-          <div class="float-sm-right">
-            <span>{{result.price | currency}}</span>
-            <button class="btn" (click)="addToCart(result)">
-              Add to Cart
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <table class="table">
+    <thead>
+    <tr>
+      <th>Title</th>
+      <th>Price</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let result of results | async" >
+      <th>{{result.title}}</th>
+      <td>{{result.price | currency}}</td>
+      <td>
+        <button class="btn" (click)="addToCart(result)">
+        Add to Cart
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
 </div>
