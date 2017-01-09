@@ -21,7 +21,7 @@
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let result of results | async" >
+    <tr *ngFor="let result of results" >
       <th>{{result.title}}</th>
       <td>{{result.price | currency}}</td>
       <td>

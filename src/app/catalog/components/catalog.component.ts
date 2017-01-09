@@ -19,10 +19,13 @@ export class CatalogComponent implements OnInit {
   }
 
   search(term: string) {
-    this.results = this.catalogService.search(term);
+    this.catalogService.search(term)
+      .subscribe(
+        res => this.results = res
+      );
   }
 
-  addToCart(book: Book){
+  addToCart(book: Book) {
     this.cartService.addPosition(book);
   }
 
